@@ -1,89 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>HOODLY</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>HOODLY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
-    <div class="logo">HOODLY</div>
+    <div class="logo" onclick="goHome()">HOODLY</div>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#collection">Collection</a>
-        <a href="#contact">Contact</a>
+        <a onclick="goHome()">Home</a>
+        <a onclick="goHome()">Collection</a>
+        <a onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
     </nav>
 </header>
 
 <!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Softness You Can Feel</h1>
-        <p>Premium hoodies designed for comfort, warmth and elegance</p>
-    </div>
+<section class="hero">
+    <h1>Softness You Can Feel</h1>
+    <p>Premium hoodies crafted for comfort and elegance</p>
 </section>
 
-<!-- BEST SELLERS -->
-<section class="collection" id="collection">
+<!-- COLLECTION -->
+<section id="product-list" class="collection">
     <h2>Best Sellers</h2>
-    <p class="subtitle">Wrapped in softness. Made to last.</p>
 
     <div class="product-grid">
-        <div class="product-card">
+        <div class="product-card" onclick="openProduct(1)">
             <span class="badge">-20%</span>
             <img src="https://via.placeholder.com/400x500">
             <h3>Signature Hoodie</h3>
-            <p class="price">
-                <span class="old">$99</span> $79
-            </p>
+            <p>$79</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" onclick="openProduct(2)">
             <span class="badge">-15%</span>
             <img src="https://via.placeholder.com/400x500">
-            <h3>Soft Nude Hoodie</h3>
-            <p class="price">
-                <span class="old">$95</span> $81
-            </p>
+            <h3>Nude Comfort Hoodie</h3>
+            <p>$85</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" onclick="openProduct(3)">
             <span class="badge">-25%</span>
             <img src="https://via.placeholder.com/400x500">
-            <h3>Oversized Comfort Hoodie</h3>
-            <p class="price">
-                <span class="old">$120</span> $90
-            </p>
+            <h3>Oversized Soft Hoodie</h3>
+            <p>$90</p>
         </div>
     </div>
 </section>
 
-<!-- SLOGAN SECTION -->
-<section class="slogan">
-    <h2>Where Comfort Meets Elegance</h2>
-    <p>
-        Each HOODLY hoodie is crafted from premium fabrics,
-        designed to hug softly and elevate your everyday style.
-    </p>
+<!-- PRODUCT DETAILS -->
+<section id="product-details" class="product-page hidden">
+    <button class="back-btn" onclick="goHome()">← Back</button>
+
+    <div class="product-images">
+        <img id="main-image">
+        <div class="thumbnails" id="thumbnails"></div>
+    </div>
+
+    <div class="product-info">
+        <h2 id="detail-name"></h2>
+        <p class="price" id="detail-price"></p>
+        <p id="detail-description"></p>
+
+        <label>Size</label>
+        <select id="detail-sizes"></select>
+
+        <button class="add-btn" onclick="addCurrentProduct()">Add to Cart</button>
+    </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Stay Close</h2>
-    <p>Join our newsletter for exclusive drops and offers</p>
-    <form>
-        <input type="email" placeholder="Your email">
-        <button type="submit">Subscribe</button>
-    </form>
-</section>
-
-<footer>
-    <p>© 2025 HOODLY. All rights reserved.</p>
-</footer>
+<!-- CART -->
+<div id="cart" class="cart hidden">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <p class="total">Total: <span id="cart-total">$0</span></p>
+    <button class="checkout-btn">Checkout</button>
+</div>
 
 <script src="script.js"></script>
 </body>

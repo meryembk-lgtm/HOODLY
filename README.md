@@ -12,11 +12,12 @@ The website uses one HTML file and dynamically switches between a product list v
 - README.md: Documentation
 
 ## Features
-- Single-page application behavior
-- Girly nude color palette
-- Dynamic product details
-- Smooth transitions
-- Fully responsive layout
+- Transparent navigation bar
+- Best sellers section with discounts
+- Single-page product details view
+- Multiple image frames per product
+- Working cart with localStorage
+- Responsive nude and elegant design
 
 ## Customization
 - Images with real product photos from Pinterest
