@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOODLY</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <h1 class="logo" onclick="goHome()">HOODLY</h1>
+</header>
+
+<!-- PRODUCT LIST -->
+<section id="product-list" class="collection">
+    <h2>Our Collection</h2>
+
+    <div class="product-grid">
+        <div class="product-card" onclick="openProduct(1)">
+            <img src="https://via.placeholder.com/400x500">
+            <h3>Blush Hoodie</h3>
+            <p>$79</p>
+        </div>
+
+        <div class="product-card" onclick="openProduct(2)">
+            <img src="https://via.placeholder.com/400x500">
+            <h3>Nude Zip Hoodie</h3>
+            <p>$85</p>
+        </div>
+
+        <div class="product-card" onclick="openProduct(3)">
+            <img src="https://via.placeholder.com/400x500">
+            <h3>Sand Oversized Hoodie</h3>
+            <p>$89</p>
+        </div>
+
+        <div class="product-card" onclick="openProduct(4)">
+            <img src="https://via.placeholder.com/400x500">
+            <h3>Cream Lounge Hoodie</h3>
+            <p>$75</p>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT DETAILS -->
+<section id="product-details" class="product-page hidden">
+    <button class="back-btn" onclick="goHome()">← Back to collection</button>
+
+    <div class="product-images">
+        <img id="detail-image">
+    </div>
+
+    <div class="product-info">
+        <h2 id="detail-name"></h2>
+        <p class="price" id="detail-price"></p>
+        <p id="detail-description"></p>
+
+        <label>Size</label>
+        <select id="detail-sizes"></select>
+
+        <button class="add-btn">Add to Cart</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
