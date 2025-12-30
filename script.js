@@ -1,19 +1,16 @@
-const productCards = document.querySelectorAll('.product-card');
+// Mobile menu toggle
+const menuToggle = document.getElementById('mobile-menu');
+const nav = document.querySelector('nav ul');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, {
-    threshold: 0.2
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
 });
 
-productCards.forEach(card => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    observer.observe(card);
+// Optional: Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
 });
