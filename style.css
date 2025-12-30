@@ -83,6 +83,23 @@ nav ul li a:hover {
     background-color: #b86e61;
 }
 
+.add-to-cart {
+    padding: 0.8rem 2rem;
+    background-color: #d68c7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.add-to-cart:hover {
+    background-color: #b86e61;
+    transform: scale(1.05);
+}
+
 /* Product Gallery */
 .gallery {
     padding: 5rem 5%;
@@ -160,6 +177,40 @@ footer {
     padding: 2rem 5%;
     text-align: center;
     background-color: #f8e6e0;
+}
+
+/* Cart Section */
+.cart {
+    padding: 5rem 5%;
+    background-color: #fff0eb;
+    text-align: center;
+}
+
+#cart-items {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#cart-items li button {
+    background-color: #d68c7a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+#cart-items li button:hover {
+    background-color: #b86e61;
 }
 
 /* Responsive */
